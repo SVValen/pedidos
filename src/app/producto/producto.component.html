@@ -1,1 +1,14 @@
 <p>producto works!</p>
+
+<table>
+  <tr>
+    <th>Id</th>
+    <th>Descripcion</th>
+    <th>Precio</th>
+  </tr>
+  <tr *ngFor="let producto of productos">
+    <td>{{producto.prodId}}</td>
+    <td>{{producto.prodDescripcion}}</td>
+    <td>{{producto.prodPrecio}}</td>
+  </tr>
+</table>
