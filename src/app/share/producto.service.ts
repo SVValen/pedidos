@@ -5,7 +5,6 @@ import { catchError, map, tap } from 'rxjs/operators';
 
 import { Producto } from './producto';
 
-
 @Injectable({
   providedIn: 'root'
 })
@@ -23,7 +22,29 @@ export class ProductoService {
             .pipe(catchError(this.handleError));
   }
 
-  handleError(err: Response) {
+  delete(id: number): Observable<any> {
+    return this.http.delete
+      (`${this.url}/${id}`)
+        .pipe(catchError(this.handleError));
+  }
+
+  put(producto: Producto): Observable<any> {
+    let payload = JSON.stringify(Producto);
+    return this.http.put<Producto>(this.url,
+      payload)
+      .pipe(catchError(this.handleError)
+      );
+  }
+
+  post(producto: Producto): Observable<any> {
+    let payload = JSON.stringify(producto);
+    return this.http.post<Producto>(this.url, payload)
+      .pipe(catchError(this.handleError));
+  }
+
+
+  public handleError(err: Response) {
+    alert(err.statusText);
     return of([]);
   }
 }
