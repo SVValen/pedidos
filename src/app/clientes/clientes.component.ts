@@ -114,7 +114,8 @@ export class ClientesComponent implements OnInit {
         });
     }else {
       this.clienteservice.post(this.seleccionado)
-        .subscribe((cliente) => {   
+        .subscribe((cliente) => {
+          this.items.push(cliente);   
           this.mostrarFormulario = false;
           this.actualizarTabla();
         })

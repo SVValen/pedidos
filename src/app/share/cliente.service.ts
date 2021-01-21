@@ -28,13 +28,13 @@ export class ClienteService {
   }
 
   put(cliente: Cliente): Observable<any> {
-    let payload = JSON.stringify(Cliente);
+    let payload = JSON.stringify(cliente);
     return this.http.put<Cliente>(this.url, payload)
       .pipe(catchError(this.handleError))
   }
 
   post(cliente: Cliente): Observable<any> {
-    let payload = JSON.stringify(Cliente);
+    let payload = JSON.stringify(cliente);
     return this.http.post<Cliente>(this.url, payload)
       .pipe(catchError(this.handleError))
   }
