@@ -29,7 +29,7 @@ export class ProductoService {
   }
 
   put(producto: Producto): Observable<any> {
-    let payload = JSON.stringify(Producto);
+    let payload = JSON.stringify(producto);
     return this.http.put<Producto>(this.url,
       payload)
       .pipe(catchError(this.handleError)

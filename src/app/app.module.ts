@@ -17,12 +17,17 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatSortModule} from '@angular/material/sort';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule, MatOptionModule } from '@angular/material/core';
+import { MatSelectModule } from '@angular/material/select';
+
 
 import { ClientesComponent } from './clientes/clientes.component';
 import { PedidosComponent } from './pedidos/pedidos.component';
 import { ProductoComponent } from './producto/producto.component';
 import { HomeComponent } from './home/home.component';
 import { ConfirmarComponent } from './confirmar/confirmar.component';
+import { PedidoDetalleComponent } from './pedido-detalle/pedido-detalle.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +37,7 @@ import { ConfirmarComponent } from './confirmar/confirmar.component';
     ProductoComponent,
     HomeComponent,
     ConfirmarComponent,
+    PedidoDetalleComponent,
   
   ],
   imports: [
@@ -51,7 +57,11 @@ import { ConfirmarComponent } from './confirmar/confirmar.component';
     MatFormFieldModule,
     MatInputModule,
     MatDialogModule,
-    MatSortModule
+    MatSortModule,
+    MatDatepickerModule,
+    MatNativeDateModule, 
+    MatOptionModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]
