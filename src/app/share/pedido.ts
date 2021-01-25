@@ -5,5 +5,5 @@ export class Pedido {
     pediFechaAlta: Date = new Date();
     pediBorrado: boolean = false;
 
-    clienNombre: number = 0;
+    clienNombre: string = '';
 }
