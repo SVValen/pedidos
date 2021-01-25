@@ -20,7 +20,7 @@ import {MatSortModule} from '@angular/material/sort';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule, MatOptionModule } from '@angular/material/core';
 import { MatSelectModule } from '@angular/material/select';
-
+import {MatStepperModule} from '@angular/material/stepper';
 
 import { ClientesComponent } from './clientes/clientes.component';
 import { PedidosComponent } from './pedidos/pedidos.component';
@@ -61,7 +61,8 @@ import { PedidoDetalleComponent } from './pedido-detalle/pedido-detalle.componen
     MatDatepickerModule,
     MatNativeDateModule, 
     MatOptionModule,
-    MatSelectModule
+    MatSelectModule,
+    MatStepperModule
   ],
   providers: [],
   bootstrap: [AppComponent]
