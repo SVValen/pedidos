@@ -22,7 +22,7 @@ export class PedidosComponent implements OnInit {
   items : Pedido[] = [];
   seleccionado = new Pedido();
 
-  columnas: string[] =  ['pediId', 'pediFecha', 'clienNombre','detalle', 'acciones'];
+  columnas: string[] =  ['pediId', 'pediFecha', 'clienNombre', 'acciones'];
   dataSource = new MatTableDataSource<Pedido>();
 
   form = new FormGroup({});
@@ -129,15 +129,15 @@ export class PedidosComponent implements OnInit {
     if (this.seleccionado.pediId) {
       this.pedidoService.put(this.seleccionado)
         .subscribe((pedido) => {
-          this.mostrarFormulario = false;
+          //this.mostrarFormulario = false;
         });
 
     } else {
       this.pedidoService.post(this.seleccionado)
-        .subscribe((pedido) => {
+        .subscribe((pedido: Pedido) => {
           pedido.clienNombre = this.cliente.find(c => c.clienId == pedido.pediClienId)!.clienNombre;
           this.items.push(pedido);
-          this.mostrarFormulario = false;
+          //this.mostrarFormulario = false;
           this.actualizarTabla();
         })
     }
