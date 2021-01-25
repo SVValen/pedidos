@@ -1,16 +1,15 @@
-<div style="display: flex;">
-    
-    <mat-form-field id="filtro" appearance="legacy">
-        <mat-label>Filter</mat-label>
-        <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
-      </mat-form-field>  
-    
-    <button id="agregar" mat-raised-button color="primary" (click)="agregar()">Agregar Producto</button>
-    
-</div>
-
-
 <div [hidden]="mostrarFormulario" style="overflow-x:auto;">
+
+    <div style="display: flex;">
+    
+        <mat-form-field id="filtro" appearance="legacy">
+            <mat-label>Filter</mat-label>
+            <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
+          </mat-form-field>  
+        
+        <button id="agregar" mat-raised-button color="primary" (click)="agregar()">Agregar Producto</button>
+        
+    </div>
 
   <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
       <ng-container matColumnDef="prodId">
@@ -56,7 +55,7 @@
 
 <div *ngIf="mostrarFormulario">
   <br>
-  <mat-card style="width: 50%;">
+  <mat-card style="width: 100%;">
       <form [formGroup]="form">
           <div>
               <div>
